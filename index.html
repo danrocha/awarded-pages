@@ -1,50 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Awarded - Track Award-Winning Movies</title>
-  <style>
-    :root {
-      --bg: #020617;
-      --text: #e2e8f0;
-      --text-muted: #94a3b8;
-      --accent: #38bdf8;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      text-align: center;
-    }
-    h1 { font-size: 48px; margin-bottom: 16px; }
-    p { color: var(--text-muted); font-size: 18px; margin-bottom: 32px; max-width: 400px; }
-    .links { display: flex; gap: 24px; }
-    a { color: var(--accent); text-decoration: none; font-size: 16px; }
-    a:hover { text-decoration: underline; }
-    .badge { margin-top: 40px; }
-    .badge img { height: 50px; }
-  </style>
-</head>
-<body>
-  <h1>Awarded</h1>
-  <p>Track award-winning movies. Discover Oscar, BAFTA, Golden Globe winners and nominees.</p>
-  <div class="links">
-    <a href="/privacy.html">Privacy Policy</a>
-    <a href="/terms.html">Terms of Service</a>
-    <a href="mailto:contact@awardedapp.com">Contact</a>
-  </div>
-  <div class="badge">
-    <a href="https://apps.apple.com/app/id6752220611">
-      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-    </a>
-  </div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Awarded - Track Award-Winning Movies</title>
+        <style>
+            :root {
+                --bg: #020617;
+                --text: #e2e8f0;
+                --text-muted: #94a3b8;
+                --accent: #38bdf8;
+            }
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    sans-serif;
+                background: var(--bg);
+                color: var(--text);
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 24px;
+                text-align: center;
+            }
+            h1 {
+                font-size: 48px;
+                margin-bottom: 16px;
+            }
+            p {
+                color: var(--text-muted);
+                font-size: 18px;
+                margin-bottom: 32px;
+                max-width: 400px;
+            }
+            .links {
+                display: flex;
+                gap: 24px;
+            }
+            a {
+                color: var(--accent);
+                text-decoration: none;
+                font-size: 16px;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .badge {
+                margin-top: 40px;
+            }
+            .badge img {
+                height: 50px;
+            }
+            .app-icon {
+                width: 120px;
+                height: 120px;
+                border-radius: 22.37%;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+                margin-bottom: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="/icon.png" alt="Awarded app icon" class="app-icon" />
+        <h1>Awarded</h1>
+        <p>
+            Browse nominations and winners from major film awards and festivals.
+            Track your watchlist and explore award-winning cinema.
+        </p>
+        <div class="links">
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Service</a>
+            <a href="mailto:contact@awardedapp.com">Contact</a>
+        </div>
+        <div class="badge">
+            <a href="https://apps.apple.com/app/id6752220611">
+                <img
+                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                    alt="Download on the App Store"
+                />
+            </a>
+        </div>
+    </body>
 </html>
