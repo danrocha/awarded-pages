@@ -140,6 +140,19 @@
                             }, 100);
                         }
                     }
+                } else if (path.startsWith("/categories/")) {
+                    descriptionEl.textContent =
+                        "Browse nominees and winners in this award category. Track performances and see who won";
+                    if (isIOS) {
+                        const categoryId = path.split("/")[2];
+                        if (categoryId) {
+                            setTimeout(function () {
+                                window.location =
+                                    "awardedapp://award/edition/category/" +
+                                    categoryId;
+                            }, 100);
+                        }
+                    }
                 } else if (path.startsWith("/awards/")) {
                     descriptionEl.textContent =
                         "Browse nominations and winners from major film awards and festivals. Track award-winning cinema";
