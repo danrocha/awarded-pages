@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Open in Awarded - Prize Details</title>
+
+        <!-- iOS Smart Banner -->
+        <meta name="apple-itunes-app" content="app-id=6752220611" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="View Prize in Awarded" />
+        <meta
+            property="og:description"
+            content="View prize nominations and winners in the Awarded app"
+        />
+        <meta property="og:image" content="https://awardedapp.com/icon.png" />
+        <meta property="og:type" content="website" />
+
+        <style>
+            :root {
+                --bg: #020617;
+                --text: #e2e8f0;
+                --text-muted: #94a3b8;
+                --accent: #38bdf8;
+                --btn-primary: #38bdf8;
+            }
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    sans-serif;
+                background: var(--bg);
+                color: var(--text);
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 24px;
+                text-align: center;
+            }
+            .app-icon {
+                width: 80px;
+                height: 80px;
+                border-radius: 22.37%;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+                margin-bottom: 24px;
+            }
+            h1 {
+                font-size: 32px;
+                margin-bottom: 12px;
+            }
+            p {
+                color: var(--text-muted);
+                font-size: 18px;
+                margin-bottom: 32px;
+                max-width: 400px;
+            }
+            .btn {
+                display: inline-block;
+                padding: 16px 32px;
+                border-radius: 12px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 16px;
+                background: var(--btn-primary);
+                color: var(--bg);
+                transition: opacity 0.2s;
+            }
+            .btn:hover {
+                opacity: 0.9;
+            }
+            .badge {
+                margin-top: 32px;
+            }
+            .badge img {
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="/icon.png" alt="Awarded" class="app-icon" />
+        <h1>Open in Awarded</h1>
+        <p>
+            View prize nominations and winners. Discover award-winning
+            performances and films
+        </p>
+
+        <div class="badge">
+            <a href="https://apps.apple.com/app/id6752220611">
+                <img
+                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                    alt="Download on the App Store"
+                />
+            </a>
+        </div>
+
+        <script>
+            // Attempt to open the app using custom URL scheme
+            (function () {
+                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+                if (isIOS) {
+                    // Extract prize ID from URL path (e.g., /awards/prizes/101 -> 101)
+                    const pathParts = window.location.pathname.split("/");
+                    const prizeId = pathParts[pathParts.length - 1] || "";
+
+                    // Try to open app with deep link
+                    if (prizeId && prizeId !== "index.html") {
+                        const appUrl = "awardedapp://awards/prizes/" + prizeId;
+                        setTimeout(function () {
+                            window.location = appUrl;
+                        }, 100);
+                    }
+                }
+            })();
+        </script>
+    </body>
+</html>

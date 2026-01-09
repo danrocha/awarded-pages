@@ -1,0 +1,20 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["SDXC8EDDR3.com.danrocc.awarded"],
+        "components": [
+          { "/": "/movies/*" },
+          { "/": "/people/*" },
+          { "/": "/awards/*" },
+          { "/": "/studios/*" },
+          { "/": "/bands/*" }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["SDXC8EDDR3.com.danrocc.awarded"]
+  }
+}
