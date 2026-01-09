@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Open in Awarded</title>
+
+        <!-- iOS Smart Banner -->
+        <meta name="apple-itunes-app" content="app-id=6752220611" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="View in Awarded" />
+        <meta
+            property="og:description"
+            content="Track movie awards and nominations in the Awarded app"
+        />
+        <meta property="og:image" content="https://awardedapp.com/icon.png" />
+        <meta property="og:type" content="website" />
+
+        <style>
+            :root {
+                --bg: #020617;
+                --text: #e2e8f0;
+                --text-muted: #94a3b8;
+                --accent: #38bdf8;
+                --btn-primary: #38bdf8;
+            }
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    sans-serif;
+                background: var(--bg);
+                color: var(--text);
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 24px;
+                text-align: center;
+            }
+            .app-icon {
+                width: 80px;
+                height: 80px;
+                border-radius: 22.37%;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+                margin-bottom: 24px;
+            }
+            h1 {
+                font-size: 32px;
+                margin-bottom: 12px;
+            }
+            p {
+                color: var(--text-muted);
+                font-size: 18px;
+                margin-bottom: 32px;
+                max-width: 400px;
+            }
+            .badge {
+                margin-top: 32px;
+            }
+            .badge img {
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="/icon.png" alt="Awarded" class="app-icon" />
+        <h1>Open in Awarded</h1>
+        <p id="description">
+            Track movie awards and nominations, discover award-winning films,
+            and manage your watchlist
+        </p>
+
+        <div class="badge">
+            <a href="https://apps.apple.com/app/id6752220611">
+                <img
+                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                    alt="Download on the App Store"
+                />
+            </a>
+        </div>
+
+        <script>
+            (function () {
+                const path = window.location.pathname;
+                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+                const descriptionEl = document.getElementById("description");
+
+                // Customize message based on path
+                if (path.startsWith("/movies/")) {
+                    descriptionEl.textContent =
+                        "Track movie awards and nominations, discover award-winning films, and manage your watchlist";
+                    if (isIOS) {
+                        const movieId = path.split("/")[2];
+                        if (movieId) {
+                            setTimeout(function () {
+                                window.location = "awardedapp://movies/" + movieId;
+                            }, 100);
+                        }
+                    }
+                } else if (path.startsWith("/people/")) {
+                    descriptionEl.textContent =
+                        "Explore award-winning actors, directors, and filmmakers. Track their nominations and wins";
+                    if (isIOS) {
+                        const personId = path.split("/")[2];
+                        if (personId) {
+                            setTimeout(function () {
+                                window.location =
+                                    "awardedapp://people/" + personId;
+                            }, 100);
+                        }
+                    }
+                } else if (path.startsWith("/awards/edition/")) {
+                    descriptionEl.textContent =
+                        "Browse nominations and winners from this award edition. Explore categories and track your favorites";
+                    if (isIOS) {
+                        const editionId = path.split("/")[3];
+                        if (editionId) {
+                            setTimeout(function () {
+                                window.location =
+                                    "awardedapp://awards/edition/" + editionId;
+                            }, 100);
+                        }
+                    }
+                } else if (path.startsWith("/awards/prizes/")) {
+                    descriptionEl.textContent =
+                        "View prize nominations and winners. Discover award-winning performances and films";
+                    if (isIOS) {
+                        const prizeId = path.split("/")[3];
+                        if (prizeId) {
+                            setTimeout(function () {
+                                window.location =
+                                    "awardedapp://awards/prizes/" + prizeId;
+                            }, 100);
+                        }
+                    }
+                } else if (path.startsWith("/awards/")) {
+                    descriptionEl.textContent =
+                        "Browse nominations and winners from major film awards and festivals. Track award-winning cinema";
+                    if (isIOS) {
+                        const awardId = path.split("/")[2];
+                        if (awardId) {
+                            setTimeout(function () {
+                                window.location = "awardedapp://awards/" + awardId;
+                            }, 100);
+                        }
+                    }
+                } else if (path.startsWith("/studios/")) {
+                    descriptionEl.textContent =
+                        "Explore studio filmographies and their award-winning productions. Track award success";
+                    if (isIOS) {
+                        const studioId = path.split("/")[2];
+                        if (studioId) {
+                            setTimeout(function () {
+                                window.location =
+                                    "awardedapp://studios/" + studioId;
+                            }, 100);
+                        }
+                    }
+                } else if (path.startsWith("/bands/")) {
+                    descriptionEl.textContent =
+                        "Explore bands and their award-winning soundtracks and scores. Track music awards";
+                    if (isIOS) {
+                        const bandId = path.split("/")[2];
+                        if (bandId) {
+                            setTimeout(function () {
+                                window.location = "awardedapp://bands/" + bandId;
+                            }, 100);
+                        }
+                    }
+                }
+            })();
+        </script>
+    </body>
+</html>
